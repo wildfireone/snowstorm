@@ -82,11 +82,21 @@ Snowball.prototype.fall = function(worldHeight) {
             this.melted = true;
         }
     } else if (!this.stopped) {
-        if (this.circle.getY() + this.radius < worldHeight - 2) {
-            this.circle.setY(this.circle.getY() + (1 * this.speed));
-        } else {
-            this.melting = true;
-        }
+      var dir = Math.random(1);
+      if(dir<=0.33){
+        this.getCircle().setX(this.getCircle().getX() - 1);
+      }
+      else if(dir<=0.66){
+        this.getCircle().setX(this.getCircle().getX() + 1);
+      }
+      else{
+
+      }
+      if (this.circle.getY() + this.radius < worldHeight - 2) {
+          this.circle.setY(this.circle.getY() + (1 * this.speed));
+      } else {
+          this.melting = true;
+      }
     } else {
 
     }
