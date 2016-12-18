@@ -2,8 +2,8 @@
  * @Author: John Isaacs <john>
  * @Date:   17-Dec-162016
  * @Filename: snowball.js
- * @Last modified by:   john
- * @Last modified time: 18-Dec-162016
+* @Last modified by:   john
+* @Last modified time: 18-Dec-162016
  */
 function Snowball(x, y) {
 
@@ -11,9 +11,10 @@ function Snowball(x, y) {
     this.radius = (10 * Math.random(1)) + 1;
     this.stopped = false;
     this.melting = false;
-    this.meltTime = 100;
+    this.meltTime = 200;
     this.melted = false;
     this.circle = createCircle(x, y, this.radius);
+    this.circle.cache();
 
 
 

@@ -55,11 +55,11 @@
 
 
         var amplitude = 100;
-        var period = 2;
+        var period = 20;
         // in ms
         var centerX = stage.getWidth() / 2;
         var anim = new Konva.Animation(function(frame) {
-
+          if (true) {
             var safeBalls = [];
             //console.log(circle.getY());
             for (var i = 0; i < snowballs.length; i++) {
@@ -82,9 +82,15 @@
             snowballs = safeBalls;
             safeBalls = [];
             //console.log(snowballs.length);
-            if(snowballs.length <500){
-              addSnowball(layer);
+            if(snowballs.length <1000){
+              if((frame.time % (2)) > 0){
+                addSnowball(layer);
+              }
             }
+          }
+          else{
+            return false;
+          }
 
         }, layer);
 
